@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Check, Download, Github, Loader2, Twitter, Linkedin } from "lucide-react";
+import { Check, Download, Github, Loader2, Linkedin, Globe } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -97,7 +97,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen w-full overflow-hidden flex flex-col items-center justify-center p-4 space-y-8">
+    <main className="min-h-screen w-full overflow-hidden flex flex-col items-center justify-center p-4 space-y-8 bg-[#0D0D0F]">
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.5 }}>
         <h1 className="text-5xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-white to-gray-400">
           VisionTube
@@ -113,10 +113,10 @@ export default function Home() {
           <div className={cardStyles}>
             <motion.div variants={containerVariants} initial="initial" animate="animate" className="flex flex-col h-full">
               <motion.h2 variants={itemVariants} className="text-3xl font-bold tracking-tight">Download Center</motion.h2>
-              <motion.p variants={itemVariants} className="text-muted-foreground mt-2">
+              <motion.p variants={itemVariants} className="text-muted-foreground mt-1">
                 Paste a YouTube URL to begin.
               </motion.p>
-              <div className="flex-grow flex flex-col justify-center space-y-4">
+              <div className="flex-grow flex flex-col justify-center space-y-2">
                 <motion.div variants={itemVariants}>
                   <Input
                     type="url"
@@ -202,12 +202,12 @@ export default function Home() {
 
       <footer className="fixed bottom-4 left-1/2 -translate-x-1/2">
         <div className="bg-card/70 backdrop-blur-2xl border border-white/10 rounded-full px-6 py-2 flex items-center gap-6 text-sm text-muted-foreground">
-          <p>Crafted by Kamruzzaman</p>
+          <p>Crafted by AKASH</p>
           <div className="h-4 w-px bg-white/10"></div>
           <div className="flex items-center gap-4">
-            <Link href="https://github.com/kamruj5" target="_blank" className="hover:text-foreground transition-colors"><Github size={18} /></Link>
-            <Link href="https://twitter.com/kamruj_zaman" target="_blank" className="hover:text-foreground transition-colors"><Twitter size={18} /></Link>
-            <Link href="https://www.linkedin.com/in/kamruj-zaman" target="_blank" className="hover:text-foreground transition-colors"><Linkedin size={18} /></Link>
+            <Link href="https://github.com/kamruj-akash" target="_blank" className="hover:text-foreground transition-colors"><Github size={18} /></Link>
+            <Link href="https://www.linkedin.com/in/kamruj-akash/" target="_blank" className="hover:text-foreground transition-colors"><Linkedin size={18} /></Link>
+            <Link href="https://kamruj.vercel.app/" target="_blank" className="hover:text-foreground transition-colors"><Globe size={18} /></Link>
           </div>
         </div>
       </footer>
