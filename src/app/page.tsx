@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Download, Github, Loader2, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
 
 type VideoFormat = {
   quality: string;
@@ -56,9 +57,17 @@ export default function Home() {
   const [selectedFormat, setSelectedFormat] = useState<SelectedFormat>(null);
   const [activeTab, setActiveTab] = useState<"video" | "audio">("video");
   const [url, setUrl] = useState("");
+  const { toast } = useToast();
 
   const handleGetFormats = () => {
-    if (!url) return;
+    if (!url) {
+      toast({
+        title: "URL is required",
+        description: "Please paste a valid YouTube URL to get started.",
+        variant: "destructive",
+      })
+      return;
+    }
     setIsLoading(true);
     setSelectedFormat(null);
     setTimeout(() => {
